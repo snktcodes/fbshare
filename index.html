@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta property="og:url"   content="https://mayadweepam.zee5.com/"/>
+    <meta property="og:type"  content="website"/>
+    <meta property="og:title" content="Mayadweepam Adventures" />
+    <meta property="og:description" content="Play Mayadweepam Adventures"/>
+    <meta property="og:image" content="https://mayadweepam.zee5.com/FbImg.png"/>	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+    crossorigin="anonymous"
+    src="https://connect.facebook.net/en_US/sdk.js"
+  ></script>
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '432447394970320',
+        cookie: true,
+        xfbml: true,
+        version: 'v11.0',
+      })
+    }
+
+    FB.AppEvents.logPageView()
+    ;(function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0]
+      if (d.getElementById(id)) {
+        return
+      }
+      js = d.createElement(s)
+      js.id = id
+      js.src = 'https://connect.facebook.net/en_US/sdk.js'
+      fjs.parentNode.insertBefore(js, fjs)
+    })(document, 'script', 'facebook-jssdk')
+  </script>
+    
+    <script>
+/* FB Share */
+    
+$(function () {
+    
+    $('#fb-share').on('click', function(e) {
+        e.preventDefault();
+    console.log('fbshare')
+        FB.ui(
+            {
+            method: 'share',
+                href: 'https://mayadweepam.zee5.com/',
+            image: 'https://mayadweepam.zee5.com/FbImg.png',
+            description: 'Play Mayadweepam',
+            title: 'Mayadweepam',    
+              
+            },
+            function(response) {
+            if (response && response.post_id) {
+                alert('Post was published.');
+                
+            } else {
+                alert('Post was not published.');
+                
+            }
+            }
+        );
+    });
+    });
+     /* End FB Share */
+    </script>
+     </head>
+    
+    
+   
+<body>
+    <button id="fb-share">FBSHARE</button>
+</body>
+</html>
